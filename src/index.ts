@@ -7,7 +7,7 @@ import setupDb from './db'
 const app = createKoaServer({
   controllers: [
     SocialScreenController
-  ]
+  ],
 })
 
 setupDb()
