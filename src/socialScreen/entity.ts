@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn } from 'typeorm'
 import { BaseEntity } from 'typeorm/repository/BaseEntity';
 
 @Entity()
@@ -21,14 +21,20 @@ export default class SocialScreen extends BaseEntity {
   @Column('text', {nullable:true})
   displayUrl: string
 
-  @Column('int', {nullable:true})
-  date: number 
+  @Column('date', {nullable:true})
+  date: string 
 
   @Column('text', {nullable:true})
   hashtag: string
 
   @Column('text', {nullable:true})
   status: string
+
+  @Column('text', {nullable:true})
+  source: string
+
+  @CreateDateColumn({type: "timestamp"})
+  createdAt: Date;
 }
 
 
